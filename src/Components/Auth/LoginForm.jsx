@@ -13,20 +13,12 @@ export const LoginForm = () => {
         <form>
           <div>
             <label htmlFor="email">Електронна пошта:</label>
-            <input
-              id="email"
-              type="email"
-              placeholder="your@email.com"
-            />
+            <input  type="email" placeholder="your@email.com" />
           </div>
 
           <div>
             <label htmlFor="password">Пароль:</label>
-            <input
-              id="password"
-              type="password"
-              placeholder="Пароль"
-            />
+            <input  type="password" placeholder="Пароль" />
           </div>
 
           <div>
@@ -38,5 +30,3 @@ export const LoginForm = () => {
     </main>
   );
 };
-
-
