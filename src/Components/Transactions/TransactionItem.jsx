@@ -1,12 +1,12 @@
 export const TransactionItem = ({ item, onDelete }) => {
   return (
     <tr>
-      <td>21.11.2019</td>
-      <td>Метро</td>
-      <td>Транспорт</td>
-      <td>-30.00 грн</td>
-       <td>
-        <button type="button"  onClick={() => onDelete(item.id)}>🗑</button>
+      <td>{item.date}</td>
+      <td>{item.description}</td>
+      <td>{item.category}</td>
+      <td>{item.amount} грн</td>
+      <td>
+        <button onClick={() => onDelete(item.id)}>✖</button>
       </td>
     </tr>
   );
