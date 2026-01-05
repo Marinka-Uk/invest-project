@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 export const ExpenseChart = () => {
   return (
     <Wrapper>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="990" height="330">
         <BarChart data={data}>
           <XAxis dataKey="name" />
           <YAxis />

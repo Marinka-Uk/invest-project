@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { Outlet } from "react-router-dom";
 import { Header } from "../Components/Header/Header";
 import { useState } from "react";
 
@@ -10,6 +11,8 @@ import { AddTransaction } from "../Components/AddTransaction/AddTransaction";
 import { Summary } from "../Components/Summary/Summary";
 import { CategoryList } from "../Components/Categories/CategoryList";
 import { ExpenseChart } from "../Components/Expense/ExpenseChart";
+
+
 
 export const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("expenses");
@@ -51,7 +54,7 @@ export const Dashboard = () => {
   <Balance />
   <AddTransaction />
 </Card>
-      
+          <Outlet />
 
       <Page>
         <TransactionList
