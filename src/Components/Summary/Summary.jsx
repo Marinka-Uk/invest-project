@@ -1,7 +1,7 @@
+import { Aside, Title, List, Item, Month, Amount } from "./Summary.style";
+
 export const Summary = ({ transactions, activeTab }) => {
-  const filtered = transactions.filter(
-    (item) => item.type === activeTab
-  );
+  const filtered = transactions.filter((item) => item.type === activeTab);
 
   const summaryByMonth = filtered.reduce((acc, item) => {
     const month = new Date(item.date).toLocaleString("uk-UA", {
@@ -13,21 +13,17 @@ export const Summary = ({ transactions, activeTab }) => {
   }, {});
 
   return (
-    <aside>
-      <h3>ЗВЕДЕННЯ</h3>
+    <Aside>
+      <Title>ЗВЕДЕННЯ</Title>
 
-      <ul>
-        {Object.entries(summaryByMonth).map(
-          ([month, total]) => (
-            <li key={month}>
-              <span>{month.toUpperCase()}</span>
-              <span>{Math.abs(total)} грн</span>
-            </li>
-          )
-        )}
-      </ul>
-    </aside>
+      <List>
+        {Object.entries(summaryByMonth).map(([month, total]) => (
+          <Item key={month}>
+            <Month>{month.toUpperCase()}</Month>
+            <Amount>{Math.abs(total)} грн</Amount>
+          </Item>
+        ))}
+      </List>
+    </Aside>
   );
 };
-
-

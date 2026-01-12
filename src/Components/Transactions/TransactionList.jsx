@@ -1,23 +1,28 @@
-import {TransactionItem} from "./TransactionItem";
+import { TransactionItem } from "./TransactionItem";
+import {Table,Head,Th,Body,} from "./TransactionsList.style";
 
-export const TransactionList = ({ transactions, activeTab, onDelete }) => {
+export const TransactionList = ({
+  transactions,
+  activeTab,
+  onDelete,
+}) => {
   const filtered = transactions.filter(
     (item) => item.type === activeTab
   );
 
   return (
-    <table>
-      <thead>
+    <Table>
+      <Head>
         <tr>
-          <th>Дата</th>
-          <th>Опис</th>
-          <th>Категорія</th>
-          <th>Сума</th>
-          <th></th>
+          <Th>Дата</Th>
+          <Th>Опис</Th>
+          <Th>Категорія</Th>
+          <Th>Сума</Th>
+          <Th></Th>
         </tr>
-      </thead>
+      </Head>
 
-      <tbody>
+      <Body>
         {filtered.map((item) => (
           <TransactionItem
             key={item.id}
@@ -25,7 +30,7 @@ export const TransactionList = ({ transactions, activeTab, onDelete }) => {
             onDelete={onDelete}
           />
         ))}
-      </tbody>
-    </table>
+      </Body>
+    </Table>
   );
 };

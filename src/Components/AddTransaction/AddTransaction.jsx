@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Section,Fields,Input,Select, Actions, PrimaryButton,SecondaryButton} from "./AddTransaction.style";
 
 export const AddTransaction = () => {
   const [category, setCategory] = useState("");
@@ -7,25 +8,22 @@ export const AddTransaction = () => {
   const [date, setDate] = useState("");
 
   return (
-    <section>
-      <div>
-        <input
+    <Section>
+      <Fields>
+        <Input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
 
-        <input
+        <Input
           type="text"
           placeholder="Опис товару"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
+        <Select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="">Категорія товару</option>
           <option value="transport">Транспорт</option>
           <option value="products">Продукти</option>
@@ -38,22 +36,20 @@ export const AddTransaction = () => {
           <option value="sport">Спорт, хобі</option>
           <option value="study">Навчання</option>
           <option value="other">Інше</option>
-        </select>
+        </Select>
 
-        <input
+        <Input
           type="number"
           placeholder="0.00"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
-      </div>
+      </Fields>
 
-      <div>
-        <button type="button">ВВЕСТИ</button>
-        <button type="button">ОЧИСТИТИ</button>
-      </div>
-    </section>
+      <Actions>
+        <PrimaryButton type="button">ВВЕСТИ</PrimaryButton>
+        <SecondaryButton type="button">ОЧИСТИТИ</SecondaryButton>
+      </Actions>
+    </Section>
   );
 };
-
-

@@ -4,11 +4,16 @@ import {Dashboard} from "./pages/Dashboard";
 import {Expenses} from "./pages/Expenses";
 import {Income} from "./pages/Income";
 import { Report } from "./pages/Report";
+import { Layout } from "./Components/Layout/Layout";
 
 function App() {
   return (
-   
+    <>
+      <Layout/>
+
+ 
       <Routes>
+
         <Route path="/" element={<Login />} />
 
   
@@ -22,7 +27,7 @@ function App() {
 
       <Route path="/report" element={<Report />} />
       </Routes>
- 
+ </>
   );
 }
 

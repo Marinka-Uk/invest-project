@@ -1,15 +1,17 @@
+import  {Section,Label,Right, Value,ConfirmButton,} from "./Balance.style";
 
 export const Balance = () => {
   return (
-    <section>
-      <p>Баланс:</p>
+    <Section>
+      <Label>Баланс:</Label>
 
-      <div>
-        <strong>00.00 UAH</strong>
-        <button type="button">ПІДТВЕРДИТИ</button>
-      </div>
-    </section>
+      <Right>
+        <Value>00.00 UAH</Value>
+        <ConfirmButton type="button">
+          ПІДТВЕРДИТИ
+        </ConfirmButton>
+      </Right>
+    </Section>
   );
 };
-
 

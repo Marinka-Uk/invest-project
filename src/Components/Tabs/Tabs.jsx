@@ -1,17 +1,21 @@
+import { TabsSection, TabButton } from "./Tabs.style";
+
 export const Tabs = ({ activeTab, setActiveTab }) => {
   return (
-    <section>
-      <button onClick={() => setActiveTab("expenses")}>
+    <TabsSection>
+      <TabButton
+        active={activeTab === "expenses"}
+        onClick={() => setActiveTab("expenses")}
+      >
         ВИТРАТИ
-      </button>
+      </TabButton>
 
-      <button onClick={() => setActiveTab("income")}>
+      <TabButton
+        active={activeTab === "income"}
+        onClick={() => setActiveTab("income")}
+      >
         ДОХІД
-      </button>
-    </section>
+      </TabButton>
+    </TabsSection>
   );
 };
-
-
-
-

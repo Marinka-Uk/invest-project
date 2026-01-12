@@ -1,32 +1,42 @@
+import {Main,Section,Card,Text,GoogleButton,Form,Field,Label,Input,Actions,PrimaryButton,SecondaryButton} from "./LoginForm.style";
+
 export const LoginForm = () => {
   return (
-    <main>
-      <section>
-        <p>Ви можете авторизуватися за допомогою акаунта Google</p>
+    <Main>
+      <Section>
+        <Card>
+          <Text>
+            Ви можете авторизуватися за допомогою акаунта Google
+          </Text>
 
-        <button type="button">
-          <span>Google</span>
-        </button>
+          <GoogleButton type="button">
+            <span>Google</span>
+          </GoogleButton>
 
-        <p>Або увійти за допомогою ел. пошти та паролю після реєстрації</p>
+          <Text>
+            Або увійти за допомогою ел. пошти та паролю після реєстрації
+          </Text>
 
-        <form>
-          <div>
-            <label htmlFor="email">Електронна пошта:</label>
-            <input  type="email" placeholder="your@email.com" />
-          </div>
+          <Form>
+            <Field>
+              <Label htmlFor="email">Електронна пошта:</Label>
+              <Input type="email" placeholder="your@email.com" />
+            </Field>
 
-          <div>
-            <label htmlFor="password">Пароль:</label>
-            <input  type="password" placeholder="Пароль" />
-          </div>
+            <Field>
+              <Label htmlFor="password">Пароль:</Label>
+              <Input type="password" placeholder="Пароль" />
+            </Field>
 
-          <div>
-            <button type="submit">УВІЙТИ</button>
-            <button type="button">РЕЄСТРАЦІЯ</button>
-          </div>
-        </form>
-      </section>
-    </main>
+            <Actions>
+              <PrimaryButton type="submit">УВІЙТИ</PrimaryButton>
+              <SecondaryButton type="button">
+                РЕЄСТРАЦІЯ
+              </SecondaryButton>
+            </Actions>
+          </Form>
+        </Card>
+      </Section>
+    </Main>
   );
 };
