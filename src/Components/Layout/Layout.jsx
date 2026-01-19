@@ -1,5 +1,5 @@
 
-import {HeaderWrapper,BackButton,BalanceBlock,BalanceLabel,BalanceValue,ConfirmButton,PeriodBlock,PeriodButton,PeriodText
+import {HeaderWrapper,BackButton,BalanceBlock,BalanceLabel,PeriodBlock,PeriodButton,PeriodText
 } from "../Header/Header.style";
 
 

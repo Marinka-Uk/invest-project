@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Section,Fields,Input,Select, Actions, PrimaryButton,SecondaryButton} from "./AddTransaction.style";
+import { Form,Fields,Input,Select, Actions, PrimaryButton,SecondaryButton} from "./AddTransaction.style";
+
 
 export const AddTransaction = () => {
   const [category, setCategory] = useState("");
@@ -7,8 +8,11 @@ export const AddTransaction = () => {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
+
+
+  //під ччас сабміту форми діспатч екшен addTransaction і передавати йому всі поля форми
   return (
-    <Section>
+    <Form>
       <Fields>
         <Input
           type="date"
@@ -47,9 +51,9 @@ export const AddTransaction = () => {
       </Fields>
 
       <Actions>
-        <PrimaryButton type="button">ВВЕСТИ</PrimaryButton>
+        <PrimaryButton type="submit">ВВЕСТИ</PrimaryButton>
         <SecondaryButton type="button">ОЧИСТИТИ</SecondaryButton>
       </Actions>
-    </Section>
+    </Form>
   );
 };

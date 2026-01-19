@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const Section = styled.section`
+export const Form = styled.form`
   background: #ffffff;
   border-radius: 30px;
   padding: 24px;
