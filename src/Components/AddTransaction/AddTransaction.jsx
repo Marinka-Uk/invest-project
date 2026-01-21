@@ -1,18 +1,47 @@
 import { useState } from "react";
-import { Form,Fields,Input,Select, Actions, PrimaryButton,SecondaryButton} from "./AddTransaction.style";
+import { useDispatch, useSelector } from "react-redux";
+import { addTransaction } from "../../redux/transactionsSlice";
 
+
+import { Form,Fields,Input,Select,Actions,PrimaryButton,SecondaryButton} from "./AddTransaction.style";
 
 export const AddTransaction = () => {
+  const dispatch = useDispatch();
+
+  const activeTab = useSelector((state) => state.ui.activeTab);
+
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    if (!date || !description || !amount) {
+      alert("Заповни всі поля");
+      return;
+    }
 
-  //під ччас сабміту форми діспатч екшен addTransaction і передавати йому всі поля форми
+    const newTransaction = {
+      id: uuidv4(),
+      type: activeTab,
+      date,
+      description,
+      category,
+      amount: Number(amount),
+    };
+
+    dispatch(addTransaction(newTransaction));
+
+    setCategory("");
+    setDescription("");
+    setAmount("");
+    setDate("");
+  };
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Fields>
         <Input
           type="date"
@@ -52,8 +81,22 @@ export const AddTransaction = () => {
 
       <Actions>
         <PrimaryButton type="submit">ВВЕСТИ</PrimaryButton>
-        <SecondaryButton type="button">ОЧИСТИТИ</SecondaryButton>
+
+        <SecondaryButton
+          type="button"
+          onClick={() => {
+            setCategory("");
+            setDescription("");
+            setAmount("");
+            setDate("");
+          }}
+        >
+          ОЧИСТИТИ
+        </SecondaryButton>
       </Actions>
     </Form>
   );
 };
+
+
+//видалення зробити тепер на цю форму
