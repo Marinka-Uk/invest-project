@@ -18,6 +18,8 @@ export const Cell = styled.td`
 
   &:last-child {
     text-align: right;
+      width: 50px;
+
   }
 `;
 

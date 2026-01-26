@@ -14,7 +14,7 @@ export const TransactionItem = ({ item, onDelete }) => {
           type="button"
           onClick={() => onDelete(item.id)}
         >
-          ✖
+          
         </DeleteButton>
       </Cell>
     </Row>
