@@ -8,7 +8,7 @@ export const TransactionList = () => {
   const dispatch = useDispatch();
 
   const transactions = useSelector(
-    (state) => state.transactions.transactions
+    (state) => state.transactions.transactions.expenses
   );
 
   const activeTab = useSelector(

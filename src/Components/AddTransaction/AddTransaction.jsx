@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTransaction } from "../../redux/transactionsSlice";
-
+import { nanoid } from 'nanoid'
 
 import { Form,Fields,Input,Select,Actions,PrimaryButton,SecondaryButton} from "./AddTransaction.style";
 
@@ -24,7 +24,7 @@ export const AddTransaction = () => {
     }
 
     const newTransaction = {
-      id: uuidv4(),
+      id: nanoid(),
       type: activeTab,
       date,
       description,

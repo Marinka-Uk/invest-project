@@ -30,11 +30,11 @@ export const Amount = styled.span`
 
 
 export const DeleteButton = styled.button`
-  width: 28px;
+  width: 75px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: 20%;
   border: none;
-  background: transparent;
+  background: red;
   color: #9ca3af;
   cursor: pointer;
   font-size: 14px;
