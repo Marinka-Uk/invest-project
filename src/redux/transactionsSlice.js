@@ -11,18 +11,26 @@ const transactionsSlice = createSlice({
 	name: 'transactions',
 	initialState,
 	reducers: {
-		addTransaction(state, action) {
+		addExpenses(state, action) {
 			state.transactions.expenses.push(action.payload)
 		},
 
-		deleteTransaction(state, action) {
+		deleteExpenses(state, action) {
 			state.transactions.expenses = state.transactions.expenses.filter(
 				item => item.id !== action.payload,
 			)
+		},addIncomes(state, action) {
+			state.transactions.incomes.push(action.payload)
 		},
+
+		deleteIncomes(state, action) {
+			state.transactions.incomes = state.transactions.incomes.filter(
+				item => item.id !== action.payload,
+			)
+		}
 	},
 })
 
-export const { addTransaction, deleteTransaction } = transactionsSlice.actions
+export const { addIncomes, deleteIncomes, addExpenses, deleteExpenses } = transactionsSlice.actions
 
 export default transactionsSlice.reducer

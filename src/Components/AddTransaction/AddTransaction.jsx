@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTransaction } from "../../redux/transactionsSlice";
-import { nanoid } from 'nanoid'
+import { addExpenses, addIncomes } from "../../redux/transactionsSlice";
+import { nanoid } from 'nanoid';
+import { useLocation } from "react-router-dom";
 
 import { Form,Fields,Input,Select,Actions,PrimaryButton,SecondaryButton} from "./AddTransaction.style";
+import { Expenses } from "../../pages/Expenses";
 
 export const AddTransaction = () => {
   const dispatch = useDispatch();
-
+const loc = useLocation();
+console.log(loc);
   const activeTab = useSelector((state) => state.ui.activeTab);
 
   const [category, setCategory] = useState("");
@@ -32,7 +35,9 @@ export const AddTransaction = () => {
       amount: Number(amount),
     };
 
-    dispatch(addTransaction(newTransaction));
+loc.pathname.includes('Expenses')?dispatch(addExpenses(newTransaction)): dispatch(addIncomes(newTransaction))
+
+    
 
     setCategory("");
     setDescription("");
@@ -70,7 +75,7 @@ export const AddTransaction = () => {
           <option value="study">Навчання</option>
           <option value="other">Інше</option>
         </Select>
-
+{/* {/перевірка + тернарник (38)}x */}
         <Input
           type="number"
           placeholder="0.00"

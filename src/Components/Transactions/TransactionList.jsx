@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteTransaction } from "../../redux/transactionsSlice";
+import { deleteExpenses} from "../../redux/transactionsSlice";
 import { TransactionItem } from "./TransactionItem";
 import {Table, Head, Th, Body} from "./TransactionsList.style";
 
@@ -39,7 +39,7 @@ export const TransactionList = () => {
             key={item.id}
             item={item}
             onDelete={(id) =>
-              dispatch(deleteTransaction(id))
+              dispatch(deleteExpenses(id))
             }
           />
         ))}
