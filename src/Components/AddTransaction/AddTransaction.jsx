@@ -1,16 +1,56 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addExpenses, addIncomes } from "../../redux/transactionsSlice";
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 import { useLocation } from "react-router-dom";
 
-import { Form,Fields,Input,Select,Actions,PrimaryButton,SecondaryButton} from "./AddTransaction.style";
-import { Expenses } from "../../pages/Expenses";
+import {
+  Form,
+  Fields,
+  Input,
+  Select,
+  Actions,
+  PrimaryButton,
+  SecondaryButton,
+} from "./AddTransaction.style";
+
+
+const categorysExpenses = [
+  { ua: "Продукти", eu: "products" },
+  {
+    ua: "Транспорт",
+    eu: "transport",
+  },
+  { ua: "Здоровʼя", eu: "health" },
+
+  { ua: "Продукти", eu: "products" },
+  {
+    ua: "Розваги",
+    eu: "fun",
+  },
+  { ua: "Все для дому", eu: "home" },
+  { ua: "Техніка", eu: "tech" },
+
+  { ua: "Комуналка, звʼязок", eu: "utilities" },
+  {
+    ua: "Спорт, хобі",
+    eu: "sport",
+  },
+  { ua: "Навчання", eu: "study" },
+
+  { ua: "Інше", eu: "other" },
+];
+
+const categorysIncomes = [
+  { ua: "Додатковий дохід", eu: "ed incomes" },
+
+  { ua: "Зарплата", eu: "selary" },
+];
 
 export const AddTransaction = () => {
   const dispatch = useDispatch();
-const loc = useLocation();
-console.log(loc);
+  const loc = useLocation();
+  console.log(loc);
   const activeTab = useSelector((state) => state.ui.activeTab);
 
   const [category, setCategory] = useState("");
@@ -35,9 +75,11 @@ console.log(loc);
       amount: Number(amount),
     };
 
-loc.pathname.includes('Expenses')?dispatch(addExpenses(newTransaction)): dispatch(addIncomes(newTransaction))
+   
 
-    
+    loc.pathname.includes("Expenses")
+      ? dispatch(addExpenses(newTransaction))
+      : dispatch(addIncomes(newTransaction));
 
     setCategory("");
     setDescription("");
@@ -53,29 +95,30 @@ loc.pathname.includes('Expenses')?dispatch(addExpenses(newTransaction)): dispatc
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
-
         <Input
           type="text"
           placeholder="Опис товару"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-
         <Select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="">Категорія товару</option>
-          <option value="transport">Транспорт</option>
-          <option value="products">Продукти</option>
-          <option value="health">Здоровʼя</option>
-          <option value="alcohol">Алкоголь</option>
-          <option value="fun">Розваги</option>
-          <option value="home">Все для дому</option>
-          <option value="tech">Техніка</option>
-          <option value="utilities">Комуналка, звʼязок</option>
-          <option value="sport">Спорт, хобі</option>
-          <option value="study">Навчання</option>
-          <option value="other">Інше</option>
+          {loc.pathname.includes("Expenses")
+            ? categorysExpenses.map((category) => {
+                return <option value={category.eu}>{category.ua}</option>;
+              })
+            : categorysIncomes.map((category) => {
+                return <option value={category.eu}>{category.ua}</option>;
+              })}
         </Select>
-{/* {/перевірка + тернарник (38)}x */}
+
+       
+        <Input
+          type="number"
+          placeholder={loc.pathname.includes("Expenses") ? "-0.00" : "+0.00"}
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
         <Input
           type="number"
           placeholder="0.00"
@@ -104,4 +147,3 @@ loc.pathname.includes('Expenses')?dispatch(addExpenses(newTransaction)): dispatc
 };
 
 
-//видалення зробити тепер на цю форму
