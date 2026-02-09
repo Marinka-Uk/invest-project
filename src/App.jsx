@@ -25,8 +25,7 @@ function App() {
        
 
 
-      <Route path="/report" element={<Report />} />
-      </Routes>
+      <Route path="/report" element={<Report />} /> //звіт графік іконки      </Routes>
  </>
   );
 }

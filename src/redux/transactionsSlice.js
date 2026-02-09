@@ -33,4 +33,21 @@ const transactionsSlice = createSlice({
 
 export const { addIncomes, deleteIncomes, addExpenses, deleteExpenses } = transactionsSlice.actions
 
+
+
+
+export const selectIncomes = (state) => state.transactions.transactions.incomes;
+export const selectExpenses = (state) => state.transactions.transactions.expenses;
+
+export const selectBalance = (state) => {
+  const incomes = selectIncomes(state);
+  const expenses = selectExpenses(state);
+
+  const totalIncome = incomes.reduce((sum, t) => sum + (Number(t.amount) || 0), 0);
+  const totalExpense = expenses.reduce((sum, t) => sum + (Number(t.amount) || 0), 0);
+
+  return totalIncome - totalExpense;
+};
+
+
 export default transactionsSlice.reducer
