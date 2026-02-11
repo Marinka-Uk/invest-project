@@ -10,7 +10,7 @@ import { TransactionList } from "../Components/Transactions/TransactionList";
 import { AddTransaction } from "../Components/AddTransaction/AddTransaction";
 import { Summary } from "../Components/Summary/Summary";
 import { CategoryList } from "../Components/Categories/CategoryList";
-import { ExpenseChart } from "../Components/Expense/ExpenseChart";
+// import { ExpenseChart } from "../Components/Expense/ExpenseChart";
 
 
 
@@ -73,7 +73,7 @@ export const Dashboard = () => {
 <Card>
    <CategoryList />
 </Card>
-<Card><ExpenseChart/></Card>
+<Card></Card>
          
         </Content>
       </Page>
