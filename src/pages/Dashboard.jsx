@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Outlet } from "react-router-dom";
 import { Header } from "../Components/Header/Header";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Balance } from "../Components/Balance/Balance";
 import { Tabs } from "../Components/Tabs/Tabs";
@@ -16,6 +17,7 @@ import { CategoryList } from "../Components/Categories/CategoryList";
 
 export const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("expenses");
+const navigate = useNavigate();
 
   const [transactions, setTransactions] = useState([
     {
@@ -57,6 +59,10 @@ export const Dashboard = () => {
    
 <Card>
   <Balance />
+  <button type="button" onClick={() => navigate("/report")}>
+  ПЕРЕЙТИ ДО ГРАФІКУ
+</button>
+
   <AddTransaction />
 </Card>
           <Outlet />

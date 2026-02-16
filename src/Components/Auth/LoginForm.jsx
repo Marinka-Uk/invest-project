@@ -1,6 +1,14 @@
 import {Main,Section,Card,Text,GoogleButton,Form,Field,Label,Input,Actions,PrimaryButton,SecondaryButton} from "./LoginForm.style";
+import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
+   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    if (e)  e.preventDefault();
+    navigate("/dashboard");
+  }
+    navigate("/dashboard");
   return (
     <Main>
       <Section>
@@ -17,7 +25,7 @@ export const LoginForm = () => {
             Або увійти за допомогою ел. пошти та паролю після реєстрації
           </Text>
 
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Field>
               <Label htmlFor="email">Електронна пошта:</Label>
               <Input type="email" placeholder="your@email.com" />
@@ -29,8 +37,11 @@ export const LoginForm = () => {
             </Field>
 
             <Actions>
-              <PrimaryButton type="submit">УВІЙТИ</PrimaryButton>
-              <SecondaryButton type="button">
+           <PrimaryButton type="button" onClick={handleSubmit}>
+  УВІЙТИ
+</PrimaryButton>
+
+              <SecondaryButton type="button"  onClick={() => navigate("/register")}>
                 РЕЄСТРАЦІЯ
               </SecondaryButton>
             </Actions>
