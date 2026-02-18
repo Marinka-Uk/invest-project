@@ -13,7 +13,9 @@ export const Header = styled.div`
 `;
 
 export const ArrowButton = styled.button`
+
   background: transparent;
+
   border: none;
   font-size: 28px;
   cursor: pointer;
