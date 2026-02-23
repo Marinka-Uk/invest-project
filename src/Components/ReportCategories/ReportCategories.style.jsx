@@ -1,58 +1,65 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  padding: 24px 0;
+  width: 100%;
 `;
 
 export const Header = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
 `;
 
 export const ArrowButton = styled.button`
-
   background: transparent;
-
   border: none;
-  font-size: 28px;
+  font-size: 20px;
+  color: #0f1724;
   cursor: pointer;
+  padding: 4px 8px;
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h4`
   margin: 0;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
 `;
 
 export const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `;
 
+/* картка категорії — вертикальна стовпчик в правій колонці */
 export const Card = styled.div`
-  background: #f6f7fb;
-  border-radius: 16px;
-  padding: 16px;
-  text-align: center;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 10px 30px rgba(10,20,40,0.04);
+  box-sizing: border-box;
 `;
 
-export const Sum = styled.p`
-  margin: 0 0 6px;
-  font-weight: 700;
+/* відображення суми на картці (помаранчевий) */
+export const Sum = styled.div`
+  color: #ff7a18;
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 6px;
 `;
 
-export const Name = styled.p`
-  margin: 0;
+/* назва категорії під сумою */
+export const Name = styled.div`
+  color: #475569;
   font-size: 12px;
-  opacity: 0.8;
 `;
 
-export const Empty = styled.p`
+/* для порожнього стану */
+export const Empty = styled.div`
+  color: #6b7280;
   text-align: center;
-  margin: 0;
-  opacity: 0.7;
+  padding: 16px 0;
 `;

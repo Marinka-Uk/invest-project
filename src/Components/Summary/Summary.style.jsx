@@ -1,29 +1,27 @@
+// src/Components/Summary/Summary.style.jsx
 import styled from "styled-components";
 
 export const Aside = styled.aside`
-  width: 420px; 
-  background: #fff;
-  border-radius: 14px;
+  width: 320px;
+  background: #ffffff;
+  border-radius: 16px;
   padding: 18px;
-  margin-left: 1000px;
-  box-shadow: 0 10px 24px rgba(22, 31, 50, 0.06);
+  box-shadow: 0 10px 30px rgba(10,20,40,0.04);
   box-sizing: border-box;
+  margin-left: 24px;
 `;
 
 export const Title = styled.h3`
-  margin: 0 0 12px;
+  margin: 0 0 12px 0;
   font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
+  color: #0f1724;
+  letter-spacing: 0.6px;
 `;
 
 export const List = styled.ul`
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
 `;
 
 export const Item = styled.li`
@@ -32,17 +30,21 @@ export const Item = styled.li`
   align-items: center;
   padding: 10px 12px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(246,247,251,1), #fff);
+  background: linear-gradient(180deg, rgba(245,247,250,1) 0%, rgba(255,255,255,1) 100%);
+  margin-bottom: 8px;
+  box-shadow: inset 0 1px 0 rgba(15,23,42,0.02);
 `;
 
 export const Month = styled.span`
   font-size: 13px;
-  color: #26313a;
-  font-weight: 600;
+  color: #0f1724;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 `;
 
 export const Amount = styled.span`
   font-size: 13px;
-  color: #39404a;
-  font-weight: 700;
+  color: #0f1724;
+  opacity: 0.85;
+  font-weight: 600;
 `;

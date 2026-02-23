@@ -88,19 +88,28 @@ const navigate = useNavigate();
 };
 
 const Page = styled.div`
-  background: #f5f7fb;
+  background: #f3f6fb; /* світлий фон */
   min-height: 100vh;
+  padding: 36px 24px;
+  box-sizing: border-box;
 `;
 
 const Content = styled.main`
   max-width: 1100px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 24px 0;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
 `;
 
+/* використовуй цей Card для великих контейнерів (великий округлений біл. фон) */
 const Card = styled.section`
   background: #ffffff;
-  border-radius: 20px;
-  padding: 24px;
+  border-radius: 26px;
+  padding: 28px;
   margin-bottom: 24px;
+  box-shadow: 0 18px 60px rgba(10,20,40,0.06);
+  box-sizing: border-box;
 `;
+
