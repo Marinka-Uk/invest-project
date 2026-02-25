@@ -20,13 +20,14 @@ export const ReportCategories = () => {
 
   const transactionsState = useSelector((state) => state.transactions);
 
-
+console.log(transactionsState);
   const expenses = transactionsState?.transactions?.expenses || [];
   const incomes = transactionsState?.transactions?.incomes || [];
-
+console.log(expenses);
+console.log(incomes);
   const list = activeTab === "expenses" ? expenses : incomes;
 
-
+console.log(list);
   const totalsByCategory = list.reduce((acc, item) => {
     const key = item.category || "other";
     acc[key] = (acc[key] || 0) + (Number(item.amount) || 0);
@@ -34,7 +35,8 @@ export const ReportCategories = () => {
   }, {});
 
   const entries = Object.entries(totalsByCategory);
-
+console.log(totalsByCategory);
+console.log(entries);
   return (
     <Section>
       <Header>

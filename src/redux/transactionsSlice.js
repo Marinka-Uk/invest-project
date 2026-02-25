@@ -5,6 +5,8 @@ const initialState = {
 		expenses: [],
 		incomes: [],
 	},
+	isLoading: false,
+  error: null,
 }
 
 const transactionsSlice = createSlice({
@@ -29,6 +31,7 @@ const transactionsSlice = createSlice({
 			)
 		}
 	},
+	
 })
 
 export const { addIncomes, deleteIncomes, addExpenses, deleteExpenses } = transactionsSlice.actions

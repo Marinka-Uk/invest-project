@@ -1,4 +1,4 @@
-// src/Components/Balance/Balance.style.jsx
+
 import styled from "styled-components";
 
 export const Section = styled.div`
@@ -24,7 +24,7 @@ export const Right = styled.div`
   gap: 14px;
 `;
 
-/* Білий овал з балансом */
+
 export const Value = styled.div`
   background: #ffffff;
   border-radius: 22px;
@@ -35,7 +35,7 @@ export const Value = styled.div`
   border: 1px solid rgba(15, 23, 42, 0.06);
 `;
 
-/* підтвердити кнопка (контурна) */
+
 export const ConfirmButton = styled.button`
   background: transparent;
   border-radius: 18px;
