@@ -3,28 +3,42 @@ import styled from "styled-components";
 export const Logo = () => {
   return (
     <Wrapper>
-      <Badge />
-      <Title>InvestIQ</Title>
+      <div style={{ position: "relative" }}>
+        <Shadow />
+        <Shape />
+      </div>
+      <Text>INVESTIQ</Text>
     </Wrapper>
   );
 };
-
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 `;
 
-const Badge = styled.div`
-  width: 36px;
-  height: 22px;
-  background: linear-gradient(180deg, #ff7a1a 0%, #ff6a00 100%);
-  border-radius: 12px;
+const Shape = styled.div`
+  width: 22px;
+  height: 32px;
+  background: #ff7a2f;
+  border-radius: 16px;
+  position: relative;
 `;
 
-const Title = styled.span`
-  font-size: 22px;
+const Shadow = styled.div`
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: #f4d6c5;
+  border-radius: 16px;
+  left: -10px;
+  top: -10px;
+  z-index: -1;
+`;
+
+const Text = styled.div`
+  font-size: 16px;
   font-weight: 800;
-  color: #111;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
+  color: black;
 `;

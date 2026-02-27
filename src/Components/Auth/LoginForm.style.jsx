@@ -8,6 +8,7 @@ export const Main = styled.main`
 `;
 
 
+
 export const Section = styled.section`
   margin-left: auto;
   width: 460px;
@@ -116,3 +117,28 @@ export const SecondaryButton = styled.button`
   font-weight: 500;
   cursor: pointer;
 `;
+
+
+export const Inn = styled.h1`
+text-align: center;
+  font-size: 72px;
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+
+`
+export const Branddd = styled.p` margin-top: 12px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #7a7a7a;
+  text-transform: uppercase;
+  margin-top: 400px;
+  width: 50px;
+  margin-right: 480px;
+  
+  
+  `
+ 

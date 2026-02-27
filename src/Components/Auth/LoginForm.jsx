@@ -1,4 +1,4 @@
-import {Main,Section,Card,Text,GoogleButton,Form,Field,Label,Input,Actions,PrimaryButton,SecondaryButton} from "./LoginForm.style";
+import {Main,Section,Card,Text,GoogleButton,Form,Field,Label,Input,Actions,PrimaryButton,SecondaryButton, Inn, Branddd} from "./LoginForm.style";
 import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
@@ -11,6 +11,10 @@ export const LoginForm = () => {
     navigate("/dashboard");
   return (
     <Main>
+      <Inn>
+        InvestIQ
+      </Inn>
+      <Branddd>smart finance</Branddd>
       <Section>
         <Card>
           <Text>
@@ -48,6 +52,8 @@ export const LoginForm = () => {
           </Form>
         </Card>
       </Section>
+
+      
     </Main>
   );
 };

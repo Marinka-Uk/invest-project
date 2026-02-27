@@ -2,16 +2,21 @@ import styled from "styled-components";
 
 
 export const HeaderWrapper = styled.header`
+  width: 100%;
+  height: 80px;
+  padding: 0 32px;
+  background: #f3f4f6;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 20px 32px;
-  background: #ffffff;
-  border-radius: 30px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
 `;
 
+export const LeftSide = styled.div`
+  display: flex;
+  align-items: center;
+  min-width: 240px;
+`;
 
 export const BackButton = styled.button`
   border: none;
@@ -76,4 +81,26 @@ export const PeriodButton = styled.button`
 export const PeriodText = styled.span`
   font-size: 14px;
   font-weight: 600;
+`;
+export const UserBlock = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const Avatar = styled.div`
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+`;
+export const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 `;
