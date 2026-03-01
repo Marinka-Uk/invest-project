@@ -33,7 +33,6 @@ export const Grid = styled.div`
   gap: 12px;
 `;
 
-/* картка категорії — вертикальна стовпчик в правій колонці */
 export const Card = styled.div`
   width: 100%;
   background: #fff;
@@ -43,7 +42,7 @@ export const Card = styled.div`
   box-sizing: border-box;
 `;
 
-/* відображення суми на картці (помаранчевий) */
+
 export const Sum = styled.div`
   color: #ff7a18;
   font-weight: 800;
@@ -51,13 +50,13 @@ export const Sum = styled.div`
   margin-bottom: 6px;
 `;
 
-/* назва категорії під сумою */
+
 export const Name = styled.div`
   color: #475569;
   font-size: 12px;
 `;
 
-/* для порожнього стану */
+
 export const Empty = styled.div`
   color: #6b7280;
   text-align: center;

@@ -10,7 +10,7 @@ import { Tabs } from "../Components/Tabs/Tabs";
 import { TransactionList } from "../Components/Transactions/TransactionList";
 import { AddTransaction } from "../Components/AddTransaction/AddTransaction";
 import { Summary } from "../Components/Summary/Summary";
-import { CategoryList } from "../Components/Categories/CategoryList";
+// import { CategoryList } from "../Components/Categories/CategoryList";
 // import { ExpenseChart } from "../Components/Expense/ExpenseChart";
 
 
@@ -51,17 +51,16 @@ const navigate = useNavigate();
   return (
     <>
     <div>
-<p>Посилання на поепердню сторінку</p>
-<p>компонент період поточний</p>
+
 
 
     </div>
    
 <Card>
   <Balance />
-  <button type="button" onClick={() => navigate("/report")}>
+  <Graf type="button" onClick={() => navigate("/report")}>
   ПЕРЕЙТИ ДО ГРАФІКУ
-</button>
+</Graf>
 
   <AddTransaction />
 </Card>
@@ -77,7 +76,7 @@ const navigate = useNavigate();
           <Summary transactions={transactions} activeTab={activeTab} />
           <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
 <Card>
-   <CategoryList />
+   {/* <CategoryList /> */}
 </Card>
 <Card></Card>
          
@@ -88,7 +87,7 @@ const navigate = useNavigate();
 };
 
 const Page = styled.div`
-  background: #f3f6fb; /* світлий фон */
+  background: #f3f6fb; 
   min-height: 100vh;
   padding: 36px 24px;
   box-sizing: border-box;
@@ -103,7 +102,19 @@ const Content = styled.main`
   align-items: flex-start;
 `;
 
-/* використовуй цей Card для великих контейнерів (великий округлений біл. фон) */
+
+const Graf = styled.button`
+
+ color: #ff7a18;
+  font-weight: 800;
+  font-size: 14px;
+   margin-bottom: 24px;
+   margin-left:  850px;
+   border-radius: 100px;
+     box-sizing: border-box;
+     border: #ffffff;
+     background: #ffffff;
+`;
 const Card = styled.section`
   background: #ffffff;
   border-radius: 26px;

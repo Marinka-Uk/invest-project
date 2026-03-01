@@ -28,15 +28,6 @@ export const ExpenseChart = () => {
 
 
 const data = [
-  { name: "Свинина", value: 5000 },
-  { name: "Говядина", value: 4500 },
-  { name: "Курятина", value: 3200 },
-  { name: "Риба", value: 2100 },
-  { name: "Палички", value: 1800 },
-  { name: "Кава", value: 1700 },
-  { name: "Спагетті", value: 1500 },
-  { name: "Шоколад", value: 800 },
-  { name: "Маслини", value: 500 },
-  { name: "Зелень", value: 300 },
+  
 ];
 

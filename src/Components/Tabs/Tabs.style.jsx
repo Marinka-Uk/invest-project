@@ -11,14 +11,21 @@ export const TabsSection = styled.section`
 
 
 export const TabButton = styled.button`
-  min-width: 120px;
-  height: 40px;
-  border-radius: 24px;
+min-width: 120px;
+  height: 44px;
+  padding: 8px 18px;
+  border-radius: 22px;
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 160ms cubic-bezier(.2,.9,.2,1);
+
 
   background: ${({ active }) =>
     active ? "#ff751d" : "transparent"};

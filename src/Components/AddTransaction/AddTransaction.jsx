@@ -119,12 +119,7 @@ export const AddTransaction = () => {
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
-        <Input
-          type="number"
-          placeholder="0.00"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
+      
       </Fields>
 
       <Actions>
