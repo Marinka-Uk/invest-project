@@ -31,6 +31,8 @@ const transactionsSlice = createSlice({
 			)
 		}
 	},
+
+	
 	
 })
 
@@ -52,5 +54,22 @@ export const selectBalance = (state) => {
   return totalIncome - totalExpense;
 };
 
+export const selectIncomeChartData = (state) => {
+  const incomes = selectIncomes(state);
 
+  return Object.values(
+    (incomes ?? []).reduce((acc, t) => {
+      const key = (t.description || "").trim(); // ⚠️ якщо у тебе інша назва поля — скажи
+
+      if (!key) return acc;
+
+      if (!acc[key]) {
+        acc[key] = { name: key, value: 0 };
+      }
+
+      acc[key].value += Number(t.amount) || 0;
+      return acc;
+    }, {})
+  ).sort((a, b) => b.value - a.value);
+};
 export default transactionsSlice.reducer

@@ -36,6 +36,7 @@ export const BalanceBlock = styled.div`
 export const BalanceLabel = styled.span`
   font-size: 14px;
   color: #6b7280;
+  
 `;
 
 export const BalanceValue = styled.strong`
@@ -98,9 +99,11 @@ export const Avatar = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 700;
+
 `;
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+
 `;

@@ -64,21 +64,21 @@ const navigate = useNavigate();
 
   <AddTransaction />
 </Card>
+<Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
           <Outlet />
 
       <Page>
         <TransactionList
+        
           transactions={transactions}
           activeTab={activeTab}
           onDelete={handleDelete}
         />
         <Content>
           <Summary transactions={transactions} activeTab={activeTab} />
-          <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-<Card>
-   {/* <CategoryList /> */}
-</Card>
-<Card></Card>
+          
+
+
          
         </Content>
       </Page>

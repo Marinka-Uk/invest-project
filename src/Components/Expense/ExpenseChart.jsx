@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 import { BarChart,Bar,XAxis, YAxis, Tooltip, ResponsiveContainer} from "recharts";
+import { selectIncomeChartData } from "../../redux/transactionsSlice";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -8,9 +10,11 @@ const Wrapper = styled.div`
 
 
 export const ExpenseChart = () => {
+  const data = useSelector(selectIncomeChartData);
+
   return (
     <Wrapper>
-      <ResponsiveContainer width="990" height="330">
+      <ResponsiveContainer width="100%" height={330}>
         <BarChart data={data}>
           <XAxis dataKey="name" />
           <YAxis />
@@ -25,9 +29,3 @@ export const ExpenseChart = () => {
     </Wrapper>
   );
 };
-
-
-const data = [
-  
-];
-

@@ -7,6 +7,8 @@ export const TabsSection = styled.section`
   border-radius: 30px;
   padding: 6px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  margin-left: 200px ;
+  margin-bottom: 20px ;
 `;
 
 

@@ -8,7 +8,7 @@ export const Aside = styled.aside`
   padding: 18px;
   box-shadow: 0 10px 30px rgba(10,20,40,0.04);
   box-sizing: border-box;
-  margin-left: 24px;
+  margin-left: 660px;
 
   
   max-height: 1120px; 

@@ -4,9 +4,12 @@ import styled from "styled-components";
 export const Main = styled.main`
   min-height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
   background: #f5f7fb;
+  padding: 40px;
+  box-sizing: border-box;
 `;
-
 
 
 export const Section = styled.section`
@@ -118,27 +121,30 @@ export const SecondaryButton = styled.button`
   cursor: pointer;
 `;
 
-
 export const Inn = styled.h1`
-text-align: center;
-  font-size: 72px;
+  margin: 0;
+  font-size: clamp(56px, 6vw, 84px);
   font-weight: 800;
   font-family: "Inter", sans-serif;
   letter-spacing: -1px;
+  color: #0b0f19;
+  line-height: 1;
+  text-align: center;
+`;
+export const BrandWrap = styled.div`
   width: 50%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-
-`
-export const Branddd = styled.p` margin-top: 12px;
-  font-size: 14px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+`;
+export const Branddd = styled.p`
+  margin: 0;
+  font-size: 12px;
   letter-spacing: 4px;
   color: #7a7a7a;
   text-transform: uppercase;
-  margin-top: 400px;
-  width: 50px;
-  margin-right: 480px;
-  
-  
-  `
- 
+  text-align: center;
+`;

@@ -19,18 +19,12 @@ export const Summary = ({ transactions, activeTab }) => {
   const filtered = transactions.filter((item) => item.type === activeTab);
 
   
-  const summaryByMonth = MONTHS.reduce((acc, month) => {
-    acc[month] = 0;
-    return acc;
-  }, {});
-
+  const summaryByMonth = new Array(12).fill(0);
 
   filtered.forEach((item) => {
-    const month = new Date(item.date).toLocaleString("uk-UA", {
-      month: "long",
-    });
-
-    summaryByMonth[month] += item.amount;
+    const d = new Date(item.date);
+    const idx = d.getMonth(); 
+    summaryByMonth[idx] += Number(item.amount) || 0;
   });
 
   return (
@@ -38,10 +32,10 @@ export const Summary = ({ transactions, activeTab }) => {
       <Title>ЗВЕДЕННЯ</Title>
 
       <List>
-        {MONTHS.map((month) => (
+        {MONTHS.map((month, idx) => (
           <Item key={month}>
             <Month>{month.toUpperCase()}</Month>
-            <Amount>{Math.abs(summaryByMonth[month])} грн</Amount>
+            <Amount>{Math.abs(summaryByMonth[idx])} грн</Amount>
           </Item>
         ))}
       </List>

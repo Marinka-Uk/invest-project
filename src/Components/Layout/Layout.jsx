@@ -42,7 +42,7 @@ export const Layout = ({ children }) => {
           <PeriodBlock style={{ background: "transparent", boxShadow: "none" }}>
             <UserBlock>
               <Avatar>{userName[0]}</Avatar>
-              <div style={{ fontWeight: 600, color: "#374151" }}>
+              <div style={{ fontWeight: 600, color: "#514537" }}>
                 {userName}   
               </div>
             </UserBlock>
